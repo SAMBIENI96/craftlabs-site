@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+?<!DOCTYPE html>
 <html class="scroll-smooth" lang="fr">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
     <title>Craft.Labs | À Propos</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -109,11 +109,6 @@
         }
     </script>
     <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            line-height: 1;
-        }
 
         html { scroll-behavior: smooth; }
 
@@ -178,6 +173,35 @@
         @media (min-width: 1024px) {
             .desktop-studio-border-r {
                 border-right: 1px solid rgba(196, 199, 199, 0.45);
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .md\:grid-cols-12 {
+                grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+            }
+
+            .md\:col-span-12,
+            .md\:col-span-8,
+            .md\:col-span-7,
+            .md\:col-span-6,
+            .md\:col-span-5 {
+                grid-column: span 6 / span 6 !important;
+            }
+
+            .md\:col-span-4,
+            .md\:col-span-3,
+            .md\:col-span-2 {
+                grid-column: span 3 / span 3 !important;
+            }
+
+            .md\:mt-24,
+            .md\:-mt-24 {
+                margin-top: 0 !important;
+            }
+
+            .md\:text-right {
+                text-align: left !important;
             }
         }
 
@@ -287,6 +311,307 @@
             filter: grayscale(0);
         }
 
+        /* Responsive polish shared across the site */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        img,
+        video,
+        svg {
+            max-width: 100%;
+        }
+
+        .mobile-menu-panel {
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+
+        @media (max-width: 1023px) {
+            nav .hidden.md\:flex {
+                display: none !important;
+            }
+
+            nav .md\:hidden,
+            nav .mobile-menu-overlay,
+            nav .mobile-menu-panel {
+                display: block !important;
+            }
+
+            [class*="md:px-margin-desktop"] {
+                padding-left: 32px !important;
+                padding-right: 32px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+            nav > div:first-child {
+                padding: 18px 20px !important;
+            }
+
+            nav a[href="index.html"] {
+                font-size: 24px !important;
+                line-height: 1 !important;
+            }
+
+            .mobile-menu-panel {
+                width: min(88vw, 340px) !important;
+                max-width: 340px !important;
+            }
+
+            main {
+                padding-top: 82px !important;
+            }
+
+            main > section:first-child {
+                padding-top: 58px !important;
+                padding-bottom: 58px !important;
+            }
+
+            [class*="md:px-margin-desktop"],
+            [class*="px-margin-mobile"],
+            section[class*="px-6"],
+            footer [class*="px-6"] {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            section[class*="py-section-gap-lg"],
+            section[class*="py-section-gap-md"] {
+                padding-top: 64px !important;
+                padding-bottom: 64px !important;
+            }
+
+            h1 {
+                font-size: clamp(38px, 11.5vw, 54px) !important;
+                line-height: 1.02 !important;
+                letter-spacing: -0.045em !important;
+            }
+
+            h2,
+            .font-headline-lg,
+            .font-headline-lg-mobile,
+            .text-headline-lg,
+            .text-headline-lg-mobile {
+                font-size: clamp(30px, 8.6vw, 40px) !important;
+                line-height: 1.12 !important;
+            }
+
+            h3,
+            h4,
+            .font-headline-md,
+            .text-headline-md {
+                font-size: clamp(22px, 6.4vw, 28px) !important;
+                line-height: 1.2 !important;
+            }
+
+            p,
+            li,
+            input,
+            select,
+            textarea {
+                font-size: 15.5px !important;
+            }
+
+            .font-body-lg,
+            .text-body-lg {
+                font-size: 16.5px !important;
+                line-height: 1.55 !important;
+            }
+
+            [class*="gap-gutter"],
+            [class*="gap-12"],
+            [class*="gap-20"],
+            [class*="gap-10"],
+            [class*="gap-16"] {
+                gap: 22px !important;
+            }
+
+            [class*="mb-20"],
+            [class*="mb-24"],
+            [class*="mb-32"] {
+                margin-bottom: 42px !important;
+            }
+
+            [class*="p-12"],
+            [class*="p-10"],
+            [class*="p-8"] {
+                padding: 22px !important;
+            }
+
+            .about-values {
+                padding-top: 56px !important;
+                padding-bottom: 48px !important;
+            }
+
+            .about-values-heading {
+                gap: 12px !important;
+                margin-bottom: 26px !important;
+            }
+
+            .about-values-heading h2 {
+                font-size: 34px !important;
+            }
+
+            .about-values-heading span {
+                width: fit-content;
+                border: 1px solid rgba(116, 120, 120, 0.28);
+                background: #ffffff;
+                padding: 9px 12px;
+                font-size: 10px !important;
+            }
+
+            .about-values-grid {
+                gap: 14px !important;
+                border: 0 !important;
+                background: transparent !important;
+            }
+
+            .about-value-card {
+                min-height: auto !important;
+                flex-direction: column !important;
+                gap: 18px !important;
+                border: 1px solid rgba(196, 199, 199, 0.55) !important;
+                padding: 22px !important;
+                background: #ffffff;
+            }
+
+            .about-value-card.bg-primary {
+                background: #000000 !important;
+            }
+
+            .about-value-index {
+                flex-direction: row !important;
+                justify-content: space-between;
+                align-items: center !important;
+                width: 100%;
+            }
+
+            .about-value-index > div {
+                width: 42px !important;
+                height: 1px !important;
+            }
+
+            .about-value-number {
+                font-size: 28px !important;
+                line-height: 1 !important;
+            }
+
+            .about-value-body {
+                display: block !important;
+                min-height: auto !important;
+            }
+
+            .about-value-body .vertical-text {
+                display: inline-flex;
+                width: fit-content;
+                margin-bottom: 18px;
+                border: 1px solid rgba(116, 120, 120, 0.22);
+                border-radius: 999px;
+                padding: 8px 10px;
+                font-size: 9.5px !important;
+                line-height: 1 !important;
+                letter-spacing: 0.14em !important;
+                writing-mode: horizontal-tb !important;
+            }
+
+            .about-value-body h4 {
+                margin-bottom: 10px !important;
+                font-size: 24px !important;
+            }
+
+            .about-value-body p {
+                font-size: 15px !important;
+                line-height: 1.55 !important;
+            }
+
+            .about-stats {
+                padding-top: 34px !important;
+                padding-bottom: 34px !important;
+            }
+
+            .about-stats-grid {
+                gap: 10px !important;
+            }
+
+            .about-stat {
+                min-height: 108px;
+                justify-content: space-between;
+                gap: 14px !important;
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                background: rgba(255, 255, 255, 0.055);
+                padding: 16px !important;
+            }
+
+            .about-stat span:first-child {
+                font-size: 9px !important;
+                line-height: 1.25 !important;
+                letter-spacing: 0.12em !important;
+            }
+
+            .about-stat span:last-child {
+                font-size: 34px !important;
+                line-height: 0.95 !important;
+            }
+
+            .about-final-cta {
+                padding-top: 56px !important;
+                padding-bottom: 58px !important;
+            }
+
+            .about-final-cta h2 {
+                max-width: 340px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 24px !important;
+                font-size: clamp(36px, 11vw, 46px) !important;
+                line-height: 0.98 !important;
+                letter-spacing: -0.045em !important;
+            }
+
+            .about-final-cta a {
+                width: 100%;
+                justify-content: center;
+                padding: 17px 22px !important;
+                font-size: 10px !important;
+            }
+
+            section [class*="aspect-video"],
+            section [class*="aspect-[3/4]"],
+            section [class*="min-h-[250px]"] {
+                max-height: 320px !important;
+                min-height: 190px !important;
+            }
+
+            footer {
+                padding-top: 44px !important;
+                padding-bottom: 44px !important;
+            }
+        }
+
+        @media (max-width: 380px) {
+            nav > div:first-child,
+            [class*="md:px-margin-desktop"],
+            [class*="px-margin-mobile"],
+            section[class*="px-6"],
+            footer [class*="px-6"] {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+
+            h1 {
+                font-size: clamp(35px, 11vw, 46px) !important;
+            }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .reveal,
             .mobile-menu-overlay,
@@ -318,7 +643,7 @@
                 </div>
             </div>
             <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="md:hidden p-2 -mr-2" id="mobile-menu-toggle" type="button">
-                <span class="material-symbols-outlined text-primary text-3xl">menu</span>
+                <i class="fa-solid fa-bars text-primary text-3xl" aria-hidden="true"></i>
             </button>
         </div>
         <div class="mobile-menu-overlay fixed inset-0 z-40 bg-primary/45 backdrop-blur-sm md:hidden" data-mobile-close></div>
@@ -327,15 +652,15 @@
                 <div class="flex items-center justify-between border-b border-outline-variant/20 pb-6">
                     <a class="font-headline-md text-[26px] font-bold tracking-tighter text-primary" href="index.html">Craft <span class="text-electric-blue">.Labs</span></a>
                     <button aria-label="Fermer le menu" class="p-2 -mr-2" data-mobile-close type="button">
-                        <span class="material-symbols-outlined text-primary text-3xl">close</span>
+                        <i class="fa-solid fa-xmark text-primary text-3xl" aria-hidden="true"></i>
                     </button>
                 </div>
                 <div class="flex flex-1 flex-col justify-between pt-10">
                     <div class="space-y-2">
-                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue" href="index.html">Accueil <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span></a>
-                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue" href="service.html">Services <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span></a>
-                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-electric-blue transition-colors" href="a%20propos.html">À propos <span class="material-symbols-outlined text-xl">arrow_forward</span></a>
-                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue" href="contact.html">Contact <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span></a>
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue" href="index.html">Accueil <i class="fa-solid fa-arrow-right text-xl transition-transform group-hover:translate-x-1" aria-hidden="true"></i></a>
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue" href="service.html">Services <i class="fa-solid fa-arrow-right text-xl transition-transform group-hover:translate-x-1" aria-hidden="true"></i></a>
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-electric-blue transition-colors" href="a%20propos.html">À propos <i class="fa-solid fa-arrow-right text-xl" aria-hidden="true"></i></a>
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue" href="contact.html">Contact <i class="fa-solid fa-arrow-right text-xl transition-transform group-hover:translate-x-1" aria-hidden="true"></i></a>
                     </div>
                     <div class="space-y-6 pt-10">
                         <a class="mobile-menu-link inline-flex w-full items-center justify-center bg-primary px-6 py-4 font-label-mono text-label-mono uppercase tracking-widest text-on-primary transition-colors hover:bg-electric-blue" href="contact.html">Lancer un projet</a>
@@ -362,7 +687,7 @@
             <div class="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
                 <div class="lg:col-start-8 lg:col-span-5 reveal" style="transition-delay: 220ms;">
                     <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Craft.Labs est un collectif de designers et développeurs dédié à la création d'expériences numériques qui transcendent l'ordinaire. Nous fusionnons précision architecturale, émotion visuelle et exécution technique.</p>
-                    <a class="inline-flex items-center gap-4 font-label-mono text-label-mono uppercase tracking-widest text-electric-blue group" href="contact.html">Discuter d'un projet <span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-2">arrow_forward</span></a>
+                    <a class="inline-flex items-center gap-4 font-label-mono text-label-mono uppercase tracking-widest text-electric-blue group" href="contact.html">Discuter d'un projet <i class="fa-solid fa-arrow-right text-lg transition-transform group-hover:translate-x-2" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>
@@ -382,18 +707,18 @@
             </div>
         </section>
 
-        <section class="px-6 md:px-margin-desktop max-w-7xl mx-auto py-section-gap-lg">
-            <div class="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6 reveal">
+        <section class="about-values px-6 md:px-margin-desktop max-w-7xl mx-auto py-section-gap-lg">
+            <div class="about-values-heading mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6 reveal">
                 <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">Nos valeurs</h2>
                 <span class="font-label-mono text-label-mono text-outline uppercase tracking-widest">03 piliers</span>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-outline-variant/60 bg-surface-container-lowest reveal">
-                <article class="p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-outline-variant/60 flex gap-7 card-depth">
-                    <div class="flex flex-col items-center gap-4 shrink-0">
-                        <span class="font-headline-md text-[44px] leading-none text-electric-blue">01</span>
+            <div class="about-values-grid grid grid-cols-1 lg:grid-cols-3 gap-0 border border-outline-variant/60 bg-surface-container-lowest reveal">
+                <article class="about-value-card p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-outline-variant/60 flex gap-7 card-depth">
+                    <div class="about-value-index flex flex-col items-center gap-4 shrink-0">
+                        <span class="about-value-number font-headline-md text-[44px] leading-none text-electric-blue">01</span>
                         <div class="h-full w-px bg-outline-variant/60"></div>
                     </div>
-                    <div class="flex min-h-[250px] gap-6">
+                    <div class="about-value-body flex min-h-[250px] gap-6">
                         <h3 class="vertical-text font-label-mono text-label-mono uppercase tracking-widest text-outline">Technique</h3>
                         <div class="mt-auto">
                             <h4 class="font-headline-md text-[26px] mb-4">Rigueur absolue</h4>
@@ -401,12 +726,12 @@
                         </div>
                     </div>
                 </article>
-                <article class="p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-outline-variant/60 flex gap-7 bg-primary text-on-primary card-depth">
-                    <div class="flex flex-col items-center gap-4 shrink-0">
-                        <span class="font-headline-md text-[44px] leading-none text-electric-blue">02</span>
+                <article class="about-value-card p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-outline-variant/60 flex gap-7 bg-primary text-on-primary card-depth">
+                    <div class="about-value-index flex flex-col items-center gap-4 shrink-0">
+                        <span class="about-value-number font-headline-md text-[44px] leading-none text-electric-blue">02</span>
                         <div class="h-full w-px bg-white/20"></div>
                     </div>
-                    <div class="flex min-h-[250px] gap-6">
+                    <div class="about-value-body flex min-h-[250px] gap-6">
                         <h3 class="vertical-text font-label-mono text-label-mono uppercase tracking-widest text-white/45">Impact</h3>
                         <div class="mt-auto">
                             <h4 class="font-headline-md text-[26px] mb-4">Clarté radicale</h4>
@@ -414,12 +739,12 @@
                         </div>
                     </div>
                 </article>
-                <article class="p-8 md:p-10 flex gap-7 card-depth">
-                    <div class="flex flex-col items-center gap-4 shrink-0">
-                        <span class="font-headline-md text-[44px] leading-none text-outline">03</span>
+                <article class="about-value-card p-8 md:p-10 flex gap-7 card-depth">
+                    <div class="about-value-index flex flex-col items-center gap-4 shrink-0">
+                        <span class="about-value-number font-headline-md text-[44px] leading-none text-outline">03</span>
                         <div class="h-full w-px bg-outline-variant/60"></div>
                     </div>
-                    <div class="flex min-h-[250px] gap-6">
+                    <div class="about-value-body flex min-h-[250px] gap-6">
                         <h3 class="vertical-text font-label-mono text-label-mono uppercase tracking-widest text-outline">Esthétique</h3>
                         <div class="mt-auto">
                             <h4 class="font-headline-md text-[26px] mb-4">Luxe numérique</h4>
@@ -430,21 +755,21 @@
             </div>
         </section>
 
-        <section class="bg-primary text-on-primary py-16 md:py-20 border-y border-outline-variant/20">
-            <div class="px-6 md:px-margin-desktop max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
-                <div class="flex flex-col gap-4">
+        <section class="about-stats bg-primary text-on-primary py-16 md:py-20 border-y border-outline-variant/20">
+            <div class="about-stats-grid px-6 md:px-margin-desktop max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+                <div class="about-stat flex flex-col gap-4">
                     <span class="font-label-mono text-label-mono text-white/45 uppercase">Projets livrés</span>
                     <span class="font-display-xl-mobile text-[58px] md:text-[76px] leading-none text-electric-blue">60+</span>
                 </div>
-                <div class="flex flex-col gap-4">
+                <div class="about-stat flex flex-col gap-4">
                     <span class="font-label-mono text-label-mono text-white/45 uppercase">Secteurs</span>
                     <span class="font-display-xl-mobile text-[58px] md:text-[76px] leading-none">12</span>
                 </div>
-                <div class="flex flex-col gap-4">
+                <div class="about-stat flex flex-col gap-4">
                     <span class="font-label-mono text-label-mono text-white/45 uppercase">Réponse</span>
                     <span class="font-display-xl-mobile text-[58px] md:text-[76px] leading-none">24h</span>
                 </div>
-                <div class="flex flex-col gap-4">
+                <div class="about-stat flex flex-col gap-4">
                     <span class="font-label-mono text-label-mono text-white/45 uppercase">Satisfaction</span>
                     <span class="font-display-xl-mobile text-[58px] md:text-[76px] leading-none">98%</span>
                 </div>
@@ -453,7 +778,7 @@
 
        
 
-        <section class="px-6 md:px-margin-desktop max-w-7xl mx-auto py-section-gap-lg text-center reveal">
+        <section class="about-final-cta px-6 md:px-margin-desktop max-w-7xl mx-auto py-section-gap-lg text-center reveal">
             <h2 class="font-display-xl-mobile md:font-display-xl text-[48px] md:text-[104px] leading-none tracking-[-0.05em] mb-10">Prêt à élever votre marque ?</h2>
             <a class="inline-flex px-10 py-5 bg-primary text-on-primary font-label-mono text-label-mono uppercase tracking-widest hover:bg-electric-blue transition-all duration-300" href="contact.html">Lancer le projet</a>
         </section>
