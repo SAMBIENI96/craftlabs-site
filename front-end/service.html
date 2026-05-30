@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html class="light" lang="fr" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Services | STUDIO_LUXE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-tint": "#5f5e5e",
+                        "surface-container-highest": "#e2e2e4",
+                        "on-secondary-fixed-variant": "#00458f",
+                        "surface-container-low": "#f3f3f5",
+                        "tertiary-container": "#1d1b1a",
+                        "primary-container": "#1c1b1b",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#858383",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "tertiary-fixed-dim": "#cac6c3",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#001b3f",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary": "#000000",
+                        "surface-container-high": "#e8e8ea",
+                        "on-secondary-container": "#fefcff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#1d1b1a",
+                        "inverse-on-surface": "#f0f0f2",
+                        "secondary-fixed": "#d7e2ff",
+                        "on-error": "#ffffff",
+                        "primary": "#000000",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#868381",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface": "#f9f9fb",
+                        "secondary-container": "#0372e4",
+                        "inverse-surface": "#2f3132",
+                        "surface-variant": "#e2e2e4",
+                        "pure-black": "#000000",
+                        "on-surface": "#1a1c1d",
+                        "secondary": "#005ab7",
+                        "on-surface-variant": "#444748",
+                        "background": "#f9f9fb",
+                        "studio-yellow": "#F0E226",
+                        "outline": "#747878",
+                        "outline-variant": "#c4c7c7",
+                        "surface-gray": "#E5E5E7",
+                        "surface-container": "#eeeef0",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c9c6c5",
+                        "tertiary-fixed": "#e6e1df",
+                        "electric-blue": "#0071E3",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9fb",
+                        "on-background": "#1a1c1d",
+                        "secondary-fixed-dim": "#abc7ff",
+                        "surface-dim": "#d9dadc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "section-gap-lg": "130px",
+                        "unit": "8px",
+                        "section-gap-md": "80px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-xl-mobile": ["Inter"],
+                        "label-mono": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["120px", { "lineHeight": "110%", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "130%", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["40px", { "lineHeight": "115%", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["64px", { "lineHeight": "115%", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "160%", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "160%", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "display-xl-mobile": ["56px", { "lineHeight": "110%", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "label-mono": ["12px", { "lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 229, 231, 0.5);
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            background: rgba(255, 255, 255, 1);
+            border-color: #0071E3;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .glass-card:hover .service-detail {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-detail {
+            opacity: 0.7;
+            transform: translateY(4px);
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .reveal-obs {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-obs.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-container .reveal-obs:nth-child(1) {
+            transition-delay: 100ms;
+        }
+
+        .stagger-container .reveal-obs:nth-child(2) {
+            transition-delay: 200ms;
+        }
+
+        .stagger-container .reveal-obs:nth-child(3) {
+            transition-delay: 300ms;
+        }
+
+        .stagger-container .reveal-obs:nth-child(4) {
+            transition-delay: 400ms;
+        }
+
+        .stagger-container .reveal-obs:nth-child(5) {
+            transition-delay: 500ms;
+        }
+
+        .stagger-container .reveal-obs:nth-child(6) {
+            transition-delay: 600ms;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #0071E3;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.is-active::after {
+            width: 100%;
+        }
+
+        .magnetic-wrap {
+            display: inline-block;
+            transition: transform 0.3s ease-out;
+            will-change: transform;
+        }
+
+        .mobile-menu-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-panel {
+            transform: translateX(-100%);
+            transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+        }
+
+        .mobile-menu-open .mobile-menu-overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-menu-open .mobile-menu-panel {
+            transform: translateX(0);
+        }
+
+        body.menu-locked {
+            overflow: hidden;
+        }
+
+        @media (max-width: 767px) {
+            section[class*="py-section-gap-lg"],
+            section[class*="py-section-gap-md"] {
+                padding-top: 72px !important;
+                padding-bottom: 72px !important;
+            }
+
+            .mobile-menu-link {
+                font-size: 24px !important;
+                padding-top: 16px !important;
+                padding-bottom: 16px !important;
+            }
+
+            h1 {
+                font-size: clamp(42px, 12vw, 56px) !important;
+                line-height: 1.06 !important;
+            }
+
+            h2,
+            .font-headline-lg,
+            .text-headline-lg-mobile {
+                font-size: clamp(32px, 9vw, 42px) !important;
+                line-height: 1.12 !important;
+            }
+
+            h3,
+            .font-headline-md,
+            .text-headline-md {
+                font-size: clamp(24px, 7vw, 30px) !important;
+                line-height: 1.22 !important;
+            }
+
+            .font-body-lg,
+            .text-body-lg {
+                font-size: 17px !important;
+                line-height: 1.55 !important;
+            }
+
+            [class*="gap-gutter"],
+            [class*="gap-10"],
+            [class*="gap-20"] {
+                gap: 24px !important;
+            }
+
+            [class*="mb-20"],
+            [class*="mb-24"] {
+                margin-bottom: 48px !important;
+            }
+
+            [class*="p-12"],
+            [class*="p-10"],
+            [class*="p-8"] {
+                padding: 24px !important;
+            }
+
+            .glass-card .mt-12,
+            .bg-pure-black .mt-12 {
+                margin-top: 32px !important;
+            }
+
+            [class*="min-h-[260px]"] {
+                min-height: 220px !important;
+            }
+
+            #processus .stagger-container {
+                gap: 18px !important;
+            }
+
+            .magnetic-wrap,
+            .magnetic-btn {
+                width: 100%;
+            }
+
+            .magnetic-btn {
+                justify-content: center;
+                text-align: center;
+                padding-left: 24px !important;
+                padding-right: 24px !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface selection:bg-electric-blue selection:text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20 transition-all duration-500">
+        <div
+            class="flex justify-between items-center px-6 md:px-margin-desktop py-5 md:py-6 w-full max-w-7xl mx-auto transition-[padding] duration-300">
+            <a class="font-headline-md text-[28px] md:text-headline-md font-bold tracking-tighter text-primary"
+                href="index.html">Craft <span class="text-electric-blue">.Labs</span></a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="nav-link relative font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-electric-blue transition-colors duration-300"
+                    href="index.html">Accueil</a>
+                <a class="nav-link is-active relative font-body-md text-body-md uppercase tracking-widest text-electric-blue transition-colors duration-300"
+                    href="service.html">Services</a>
+                <a class="nav-link relative font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-electric-blue transition-colors duration-300"
+                    href="a%20propos.html">À Propos</a>
+                <a class="nav-link relative font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-electric-blue transition-colors duration-300"
+                    href="contact.html">Contact</a>
+                <div class="magnetic-wrap">
+                    <a href="contact.html"
+                        class="magnetic-btn ml-4 inline-flex px-6 py-3 bg-primary text-on-primary font-label-mono text-label-mono uppercase tracking-widest hover:bg-electric-blue transition-all duration-300">
+                        S'informer
+                    </a>
+                </div>
+            </div>
+            <!-- Mobile Menu Trigger -->
+            <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu"
+                class="md:hidden p-2 -mr-2" id="mobile-menu-toggle" type="button">
+                <span class="material-symbols-outlined text-primary text-3xl">menu</span>
+            </button>
+        </div>
+        <div class="mobile-menu-overlay fixed inset-0 z-40 bg-primary/45 backdrop-blur-sm md:hidden" data-mobile-close>
+        </div>
+        <aside aria-hidden="true"
+            class="mobile-menu-panel fixed left-0 top-0 z-50 h-dvh w-[86vw] max-w-[360px] bg-surface-container-lowest border-r border-outline-variant/30 shadow-2xl md:hidden"
+            id="mobile-menu">
+            <div class="flex h-full flex-col px-6 py-6">
+                <div class="flex items-center justify-between border-b border-outline-variant/20 pb-6">
+                    <a class="font-headline-md text-[26px] font-bold tracking-tighter text-primary"
+                        href="index.html">Craft <span class="text-electric-blue">.Labs</span></a>
+                    <button aria-label="Fermer le menu" class="p-2 -mr-2" data-mobile-close type="button">
+                        <span class="material-symbols-outlined text-primary text-3xl">close</span>
+                    </button>
+                </div>
+                <div class="flex flex-1 flex-col justify-between pt-10">
+                    <div class="space-y-2">
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue"
+                            href="index.html">Accueil <span
+                                class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span></a>
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-electric-blue transition-colors"
+                            href="service.html">Services <span
+                                class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span></a>
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue"
+                            href="a%20propos.html">À propos <span
+                                class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span></a>
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue"
+                            href="contact.html">Contact <span
+                                class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span></a>
+                    </div>
+                    <div class="space-y-6 pt-10">
+                        <a class="mobile-menu-link inline-flex w-full items-center justify-center bg-primary px-6 py-4 font-label-mono text-label-mono uppercase tracking-widest text-on-primary transition-colors hover:bg-electric-blue"
+                            href="contact.html">Lancer un projet</a>
+                        <p class="font-body-md text-sm leading-relaxed text-on-surface-variant">Services digitaux
+                            premium pour sites, applications et expériences performantes.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </nav>
+    <main class="pt-[90px]">
+        <!-- Hero Section -->
+        <section class="px-6 md:px-margin-desktop max-w-7xl mx-auto py-section-gap-lg reveal-obs active" id="accueil">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-end">
+                <div class="md:col-span-8">
+                    <span class="font-label-mono text-label-mono text-electric-blue mb-4 block">NOTRE EXPERTISE</span>
+                    <h1 class="font-headline-lg-mobile md:font-headline-lg text-5xl md:text-7xl leading-tight mb-8">
+                        Créer l'Excellence <br class=""><span
+                            class="inline-block px-4 py-1 border border-electric-blue bg-electric-blue/5 rounded-xl">Numérique.</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Nous accompagnons les marques visionnaires dans la construction d'écosystèmes numériques haute
+                        performance. Notre approche allie rigueur technique et esthétique irréprochable.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Services Grid -->
+        <section class="px-6 md:px-margin-desktop max-w-7xl mx-auto py-section-gap-lg" id="travaux">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter stagger-container">
+                <!-- Card 1: Développement Web -->
+                <div class="glass-card p-10 flex flex-col h-full reveal-obs group/card active">
+                    <div
+                        class="mb-8 w-12 h-12 flex items-center justify-center bg-surface-container rounded-full group-hover/card:bg-electric-blue/10 transition-colors duration-500">
+                        <span class="material-symbols-outlined text-electric-blue"
+                            style="font-variation-settings: &quot;FILL&quot; 1;">code</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-4 group-hover/card:text-electric-blue transition-colors duration-500 text-on-surface"
+                        >Développement Web</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-auto service-detail">
+                        Conçu pour la vitesse et la précision. Nous créons des environnements web sur mesure utilisant
+                        une architecture moderne garantissant performance et évolutivité.
+                    </p>
+                    <div class="mt-12 group flex items-center gap-2 cursor-pointer">
+                        <span
+                            class="font-label-mono text-label-mono text-primary group-hover:text-electric-blue transition-colors text-on-surface">EN
+                            SAVOIR PLUS</span>
+                        <span
+                            class="material-symbols-outlined text-[16px] group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+                    </div>
+                </div>
+                <!-- Card 2: Applications SaaS -->
+                <div class="glass-card p-10 flex flex-col h-full reveal-obs group/card active">
+                    <div
+                        class="mb-8 w-12 h-12 flex items-center justify-center bg-surface-container rounded-full group-hover/card:bg-electric-blue/10 transition-colors duration-500">
+                        <span class="material-symbols-outlined text-electric-blue"
+                            style="font-variation-settings: &quot;FILL&quot; 1;">terminal</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-4 group-hover/card:text-electric-blue transition-colors duration-500 text-on-surface"
+                        >Applications SaaS</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-auto service-detail">
+                        Transformer des besoins complexes en produits numériques intuitifs. Nous nous spécialisons dans
+                        le développement de plateformes SaaS robustes.
+                    </p>
+                    <div class="mt-12 group flex items-center gap-2 cursor-pointer">
+                        <span
+                            class="font-label-mono text-label-mono text-primary group-hover:text-electric-blue transition-colors text-on-surface">EN
+                            SAVOIR PLUS</span>
+                        <span
+                            class="material-symbols-outlined text-[16px] group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+                    </div>
+                </div>
+                <!-- Card 3: Applications Mobiles -->
+                <div class="glass-card p-10 flex flex-col h-full reveal-obs group/card active"
+                    style="background: rgba(255, 255, 255, 0.9); z-index: 10; position: relative;">
+                    <div
+                        class="mb-8 w-12 h-12 flex items-center justify-center bg-surface-container rounded-full group-hover/card:bg-electric-blue/10 transition-colors duration-500">
+                        <span class="material-symbols-outlined text-electric-blue"
+                            style="font-variation-settings: &quot;FILL&quot; 1;">smartphone</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-4 group-hover/card:text-electric-blue transition-colors duration-500 text-on-surface"
+                        >Applications Mobiles</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-auto service-detail">
+                        Expériences natives pour iOS et Android. Nos solutions mobiles exploitent tout le potentiel
+                        matériel pour offrir des interfaces fluides et réactives.
+                    </p>
+                    <div class="mt-12 group flex items-center gap-2 cursor-pointer">
+                        <span
+                            class="font-label-mono text-label-mono text-primary group-hover:text-electric-blue transition-colors text-on-surface">EN
+                            SAVOIR PLUS</span>
+                        <span
+                            class="material-symbols-outlined text-[16px] group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+                    </div>
+                </div>
+                <!-- Card 4: Design UI/UX -->
+                <div class="glass-card p-10 flex flex-col h-full reveal-obs group/card active">
+                    <div
+                        class="mb-8 w-12 h-12 flex items-center justify-center bg-surface-container rounded-full group-hover/card:bg-electric-blue/10 transition-colors duration-500">
+                        <span class="material-symbols-outlined text-electric-blue"
+                            style="font-variation-settings: &quot;FILL&quot; 1;">grid_view</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-4 group-hover/card:text-electric-blue transition-colors duration-500 text-on-surface"
+                        >Design UI/UX</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-auto service-detail">
+                        Le design qui communique la valeur. Nous créons des interfaces minimalistes à haute conversion,
+                        ancrées dans la psychologie de l'utilisateur.
+                    </p>
+                    <div class="mt-12 group flex items-center gap-2 cursor-pointer">
+                        <span
+                            class="font-label-mono text-label-mono text-primary group-hover:text-electric-blue transition-colors text-on-surface">EN
+                            SAVOIR PLUS</span>
+                        <span
+                            class="material-symbols-outlined text-[16px] group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+                    </div>
+                </div>
+                <!-- Card 5: SEO & Performance -->
+                <div class="glass-card p-10 flex flex-col h-full reveal-obs group/card active">
+                    <div
+                        class="mb-8 w-12 h-12 flex items-center justify-center bg-surface-container rounded-full group-hover/card:bg-electric-blue/10 transition-colors duration-500">
+                        <span class="material-symbols-outlined text-electric-blue"
+                            style="font-variation-settings: &quot;FILL&quot; 1;">speed</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-4 group-hover/card:text-electric-blue transition-colors duration-500 text-on-surface"
+                        >SEO &amp; Performance</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-auto service-detail">
+                        La visibilité par l'excellence technique. Nous optimisons les Core Web Vitals pour assurer que
+                        votre marque domine les paysages numériques.
+                    </p>
+                    <div class="mt-12 group flex items-center gap-2 cursor-pointer">
+                        <span
+                            class="font-label-mono text-label-mono text-primary group-hover:text-electric-blue transition-colors text-on-surface">EN
+                            SAVOIR PLUS</span>
+                        <span
+                            class="material-symbols-outlined text-[16px] group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+                    </div>
+                </div>
+                <!-- CTA Feature Card -->
+                <div class="relative overflow-hidden bg-pure-black p-10 flex flex-col h-full group reveal-obs active">
+                    <div
+                        class="absolute inset-0 opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity duration-700">
+                        <div
+                            class="h-full w-full bg-[radial-gradient(circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),#0071E3,transparent_70%)]">
+                        </div>
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <h3
+                            class="font-headline-md text-headline-md text-white mb-6 group-hover:translate-x-2 transition-transform duration-500">
+                            Besoin d'une solution personnalisée ?</h3>
+                        <p
+                            class="font-body-md text-body-md text-on-primary-container mb-auto group-hover:translate-x-2 transition-transform duration-500 delay-75 text-on-surface-variant">
+                            Au-delà de nos services de base, nous concevons des stratégies de transformation numérique
+                            sur mesure pour les exigences des entreprises.
+                        </p>
+                        <a href="contact.html"
+                            class="mt-12 self-start bg-white text-pure-black px-10 py-4 font-label-mono text-label-mono uppercase tracking-widest hover:bg-electric-blue hover:text-white hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,113,227,0.3)] transition-all duration-300 active:translate-y-0">
+                            DÉMARRER UN PROJET
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Feature Showcase with Image -->
+        <section class="bg-surface-container-low py-section-gap-lg overflow-hidden" id="services">
+            <div class="px-6 md:px-margin-desktop max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
+                    <div class="reveal-obs active">
+                        <div class="overflow-hidden">
+                            <img alt="Infrastructure technique"
+                                class="w-full grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl hover:scale-105"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP7WaBkMsQj4LlPv56DW_kXWKBE97ENr8fKx2tqmL4FFoeFyfhhnwxSa9yUaeKM4IWJAhxUxwXmPD9IF2FnusaxL8_uo53SvVHbqRQDSGYlvy8T0iY4Pt1S8nEyUl4KC-Sp91Lp5nQYeBqT7Fmg7WKqvjr8GO6ISuMTLi1_P_dwwosoaAYHGb4oUZFVs4D7-XULz8grE6sWFr-P0fPwE_7PuEqyNp3R986yS_w89bSE9gbmREG7mnmmjbqhkH_bow8vXEhzkCJKzc">
+                        </div>
+                    </div>
+                    <div class="reveal-obs active">
+                        <span class="font-label-mono text-label-mono text-electric-blue mb-4 block">LE STANDARD
+                            STUDIO</span>
+                        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">La précision
+                            technique rencontre l'art haut de gamme.</h2>
+                        <div class="space-y-8">
+                            <div class="flex gap-6 group/item">
+                                <span
+                                    class="font-headline-md text-headline-md text-outline group-hover/item:text-electric-blue transition-colors duration-500">01</span>
+                                <div>
+                                    <h4 class="font-body-lg font-bold mb-2">Philosophie Latence Zéro</h4>
+                                    <p
+                                        class="font-body-md text-on-surface-variant group-hover/item:text-on-surface transition-colors duration-500">
+                                        Nous optimisons chaque milliseconde du parcours utilisateur pour des
+                                        interactions fluides et immédiates.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6 group/item">
+                                <span
+                                    class="font-headline-md text-headline-md text-outline group-hover/item:text-electric-blue transition-colors duration-500">02</span>
+                                <div>
+                                    <h4 class="font-body-lg font-bold mb-2">Logique Architecturale Sur Mesure</h4>
+                                    <p
+                                        class="font-body-md text-on-surface-variant group-hover/item:text-on-surface transition-colors duration-500">
+                                        Pas de modèles. Chaque ligne de code est écrite spécifiquement pour les
+                                        objectifs uniques de votre marque.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6 group/item">
+                                <span
+                                    class="font-headline-md text-headline-md text-outline group-hover/item:text-electric-blue transition-colors duration-500">03</span>
+                                <div>
+                                    <h4 class="font-body-lg font-bold mb-2">Évolutivité Mondiale</h4>
+                                    <p
+                                        class="font-body-md text-on-surface-variant group-hover/item:text-on-surface transition-colors duration-500">
+                                        Des systèmes conçus pour fonctionner sans faille sous une charge élevée sur tous
+                                        les continents.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Process Bento Grid -->
+        <section class="px-6 md:px-margin-desktop max-w-7xl mx-auto py-section-gap-lg" id="processus">
+            <div class="text-center mb-20 reveal-obs active">
+                <span class="font-label-mono text-label-mono text-electric-blue mb-4 block">NOTRE MÉTHODE</span>
+                <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Un Processus Rigoureux</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px] stagger-container">
+                <div
+                    class="md:col-span-2 md:row-span-2 p-12 flex flex-col justify-end group reveal-obs hover:border-electric-blue/30 transition-all duration-500 overflow-hidden relative active border-2 border-electric-blue">
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <span class="font-headline-md text-display-xl-mobile mb-auto text-outline"
+                            data-stitch-orig-opacity="0">01</span>
+                        <div>
+                            <h3
+                                class="font-body-lg font-bold group-hover:text-electric-blue transition-colors text-on-surface">
+                                Découverte &amp; Stratégie</h3>
+                            <p class="font-body-md text-on-surface-variant">Immersion profonde dans vos valeurs de
+                                marque et votre paysage technique pour définir une voie claire.</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="md:col-span-2 min-h-[260px] md:min-h-0 bg-surface-container border border-outline-variant/30 p-8 flex flex-col justify-between reveal-obs group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP5v4v_VzFqbd5-S1pJybMboNesjieXXuBulht4csdDgQLw_Nqt1NvUn8UqatNjUcgzJmhuIjBoM5_r-qYiNTSYiYb05RJCeLXOEscJZUlUz0Md3MfRLJvvVQUddWa61Xpz-3gRdq4j23xrH4PgotGOpuPCEpnP3yYMrivpTDD56VY7uUUb6bH2vQv1DwZjJUw26OD5Myf_LmzD-xg_FXSvnAKx5kOSSoRXmVB629dwBQQuercXnd7DNaSQHMbf-hiHXupLjVmfxc"
+                            class="w-full h-full object-cover" alt="Architecture Architecture">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/65 to-black/25"></div>
+                    </div>
+                    <h3
+                        class="font-body-lg font-bold group-hover:text-electric-blue transition-colors relative z-10 text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
+                        Architecture</h3>
+                    <p class="font-body-md relative z-10 text-white/80 [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">Plans structurels privilégiant la
+                        sécurité, la vitesse et une flexibilité pérenne.</p>
+                </div>
+                <div
+                    class="min-h-[260px] md:min-h-0 bg-white border border-outline-variant/30 p-8 flex flex-col justify-between reveal-obs group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgZvgTQ0sHdjmTsCwWzf9iyHc2bXzzVZqYF1Vfmmk-0Ba7Ppd_0DwmSur2muN6jihM0zCQCgOtjM_S5nXmHYdZs9QCmbaJn00ezs92ZlpO76TlR1XnKz7mKxGyRCbFTqiYJL4p9sJtOSjiBIyNS4eCdIuFFpHJI6Judd5FE5yYY3oCLeEJhhR4QRigznF6T3Art9ovGKdfENHyFnBF3wswB71PkZUIlHIrysJA6CvPRtNx1Ccb4OQVln1vYCto5ZjRL-EHpTMfbJo"
+                            class="w-full h-full object-cover" alt="Design Workspace">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/65 to-black/25"></div>
+                    </div>
+                    <h3
+                        class="font-body-lg font-bold group-hover:text-electric-blue transition-colors relative z-10 text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
+                        Design</h3>
+                    <p class="font-body-md relative z-10 text-white/80 [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">Systèmes visuels qui définissent le
+                        luxe numérique.</p>
+                </div>
+                <div
+                    class="min-h-[260px] md:min-h-0 bg-pure-black p-8 flex flex-col justify-between reveal-obs group relative overflow-hidden transition-all duration-500">
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv_ylXf0pwtFbQMmxrx028as0QmDKVgbMjxgdFBhVg__4a2A5kaUjm29neatDPB-AatvKSlKPuzMrfYjeuEt19LJjb8JjgGMt0-a8E_zeCcn3hQhQ8lgOrzAqdqkm9NbuMXg4jNnqgElAQhghHW-SJeq5XDw2Tz18vEoBqsXCvZj3udktV0-Ch4ML8Uyq83E_pP43WlUqHo2mqHpDnXxoCL7aYKFefVkZ7hg56V12A6Q4Ylhqvwh-AUJ6rsGO-j3OAzXSmg-VCZyw"
+                            class="w-full h-full object-cover" alt="Execution Code">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/65 to-black/25"></div>
+                    </div>
+                    <h3
+                        class="font-body-lg font-bold group-hover:text-electric-blue transition-colors relative z-10 text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">
+                        Exécution</h3>
+                    <p class="font-body-md relative z-10 text-white/80 [text-shadow:0_2px_18px_rgba(0,0,0,0.55)]">Développement et déploiement précis.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+      <!-- Footer -->
+    <footer
+        class="bg-surface-container-lowest border-t border-outline-variant/30 w-full py-12 md:py-14 reveal active">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-gutter px-6 md:px-margin-desktop max-w-7xl mx-auto">
+            <div class="md:col-span-5">
+                <a class="font-headline-md text-[26px] text-primary font-bold tracking-tighter mb-5 block"
+                    href="index.html">Craft<span class="text-electric-blue">.Labs</span></a>
+                <p class="font-body-md text-on-surface-variant max-w-sm mb-8">
+                    Un studio global de produits numériques focalisé sur le design haut de gamme et l'excellence
+                    technique.
+                </p>
+            </div>
+            <div class="md:col-span-2">
+                <p class="font-label-mono text-label-mono text-primary uppercase mb-4">Menu</p>
+                <ul class="space-y-3 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="index.html">Accueil</a></li>
+                    <li class=""><a class="text-electric-blue font-medium transition-colors" href="service.html">Services</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="a%20propos.html">À Propos</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-2">
+                <p class="font-label-mono text-label-mono text-primary uppercase mb-4">Social</p>
+                <ul class="space-y-3 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">LinkedIn</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">Instagram</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">Twitter</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">Dribbble</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-3">
+                <p class="font-label-mono text-label-mono text-primary uppercase mb-4">Légal</p>
+                <ul class="space-y-3 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">Politique de
+                            Confidentialité</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">Conditions
+                            d'Utilisation</a></li>
+                </ul>
+            </div>
+            <div
+                class="md:col-span-12 mt-10 pt-6 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between gap-4">
+                <p class="font-label-mono text-label-mono text-outline uppercase">©<span id="year"></span> Craft<span class="text-electric-blue">.Labs</span></p>
+                <script>
+                    (function(){
+                        const y = document.getElementById('year');
+                        if(y) y.textContent = new Date().getFullYear();
+                    })();
+                </script>
+                <p class="font-label-mono text-label-mono text-outline uppercase">Construit avec une précision
+                    chirurgicale.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const useGsap = !reduceMotion && window.gsap && window.ScrollTrigger;
+
+        if (useGsap) {
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.config({ force3D: true, nullTargetWarn: false });
+
+            gsap.set('.reveal-obs', { autoAlpha: 0, y: 34 });
+            gsap.set('.glass-card, #processus .group', { transformPerspective: 900 });
+
+            gsap.fromTo('main > section:first-child',
+                { autoAlpha: 0, y: 24 },
+                { autoAlpha: 1, y: 0, duration: 0.9, ease: 'power3.out' }
+            );
+
+            gsap.utils.toArray('.reveal-obs').forEach((element, index) => {
+                const variant = index % 3;
+                gsap.fromTo(element,
+                    {
+                        autoAlpha: 0,
+                        y: variant === 0 ? 38 : 24,
+                        x: variant === 1 ? -18 : variant === 2 ? 18 : 0,
+                        rotate: variant === 2 ? 0.8 : 0
+                    },
+                    {
+                        autoAlpha: 1,
+                        y: 0,
+                        x: 0,
+                        rotate: 0,
+                        duration: 0.85,
+                        ease: 'power3.out',
+                        delay: Math.min(index % 4, 3) * 0.04,
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top 86%',
+                            once: true
+                        },
+                        onStart: () => element.classList.add('active')
+                    }
+                );
+            });
+
+            gsap.utils.toArray('.stagger-container').forEach((container) => {
+                const items = container.querySelectorAll(':scope > *');
+                gsap.fromTo(items,
+                    { autoAlpha: 0, y: 38, scale: 0.97 },
+                    {
+                        autoAlpha: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.75,
+                        ease: 'power3.out',
+                        stagger: 0.08,
+                        scrollTrigger: {
+                            trigger: container,
+                            start: 'top 82%',
+                            once: true
+                        }
+                    }
+                );
+            });
+
+            gsap.utils.toArray('img').forEach((image) => {
+                gsap.fromTo(image,
+                    { scale: 1.08 },
+                    {
+                        scale: 1,
+                        duration: 1.2,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: image,
+                            start: 'top 90%',
+                            once: true
+                        }
+                    }
+                );
+            });
+        } else {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.reveal-obs').forEach(el => observer.observe(el));
+        }
+
+        const nav = document.querySelector('nav');
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileCloseTargets = document.querySelectorAll('[data-mobile-close], .mobile-menu-link');
+
+        const setMobileMenu = (isOpen) => {
+            if (!nav || !mobileMenu || !mobileToggle) return;
+
+            nav.classList.toggle('mobile-menu-open', isOpen);
+            document.body.classList.toggle('menu-locked', isOpen);
+            mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+            mobileToggle.setAttribute('aria-expanded', String(isOpen));
+
+            if (isOpen && window.gsap && !reduceMotion) {
+                gsap.fromTo('.mobile-menu-link',
+                    { autoAlpha: 0, x: -18 },
+                    { autoAlpha: 1, x: 0, duration: 0.45, ease: 'power3.out', stagger: 0.06, delay: 0.1 }
+                );
+            }
+        };
+
+        mobileToggle?.addEventListener('click', () => {
+            const isOpen = mobileToggle.getAttribute('aria-expanded') === 'true';
+            setMobileMenu(!isOpen);
+        });
+
+        mobileCloseTargets.forEach((target) => {
+            target.addEventListener('click', (event) => {
+                const href = target.getAttribute('href');
+                const isSamePageAnchor = href?.startsWith('#') && href.length > 1;
+
+                setMobileMenu(false);
+
+                if (isSamePageAnchor) {
+                    event.preventDefault();
+                    setTimeout(() => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }), 180);
+                }
+            });
+        });
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') setMobileMenu(false);
+        });
+
+        window.addEventListener('scroll', () => {
+            const navInner = nav?.querySelector('div');
+            if (!nav || !navInner) return;
+
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg', 'bg-surface/95');
+                nav.classList.remove('bg-surface/80');
+                navInner.classList.add('py-4');
+                navInner.classList.remove('py-5', 'md:py-6');
+            } else {
+                nav.classList.add('bg-surface/80');
+                nav.classList.remove('shadow-lg', 'bg-surface/95');
+                navInner.classList.add('py-5', 'md:py-6');
+                navInner.classList.remove('py-4');
+            }
+        }, { passive: true });
+
+        const ctaCard = document.querySelector('.bg-pure-black.group');
+        if (ctaCard) {
+            ctaCard.addEventListener('mousemove', e => {
+                const rect = ctaCard.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                ctaCard.style.setProperty('--mouse-x', `${x}%`);
+                ctaCard.style.setProperty('--mouse-y', `${y}%`);
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>

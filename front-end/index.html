@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr" style="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>STUDIO_LUXE | Studio de Produits Numériques</title>
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#1c1b1b",
+                        "surface-tint": "#5f5e5e",
+                        "surface-container-highest": "#e2e2e4",
+                        "on-secondary-fixed-variant": "#00458f",
+                        "surface-container-low": "#f3f3f5",
+                        "tertiary-container": "#1d1b1a",
+                        "primary-container": "#1c1b1b",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#858383",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "tertiary-fixed-dim": "#cac6c3",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#001b3f",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary": "#000000",
+                        "surface-container-high": "#e8e8ea",
+                        "on-secondary-container": "#fefcff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#1d1b1a",
+                        "inverse-on-surface": "#f0f0f2",
+                        "secondary-fixed": "#d7e2ff",
+                        "on-error": "#ffffff",
+                        "primary": "#000000",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#868381",
+                        "on-primary-fixed-variant": "#474646",
+                        "surface": "#f9f9fb",
+                        "secondary-container": "#0372e4",
+                        "inverse-surface": "#2f3132",
+                        "surface-variant": "#e2e2e4",
+                        "pure-black": "#000000",
+                        "on-surface": "#1a1c1d",
+                        "secondary": "#005ab7",
+                        "on-surface-variant": "#444748",
+                        "background": "#f9f9fb",
+                        "studio-yellow": "#F0E226",
+                        "outline": "#747878",
+                        "outline-variant": "#c4c7c7",
+                        "surface-gray": "#E5E5E7",
+                        "surface-container": "#eeeef0",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c9c6c5",
+                        "tertiary-fixed": "#e6e1df",
+                        "electric-blue": "#0071E3",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9fb",
+                        "on-background": "#1a1c1d",
+                        "secondary-fixed-dim": "#abc7ff",
+                        "surface-dim": "#d9dadc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "section-gap-lg": "130px",
+                        "unit": "8px",
+                        "section-gap-md": "80px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-xl-mobile": ["Inter"],
+                        "label-mono": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["120px", { "lineHeight": "110%", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "130%", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["40px", { "lineHeight": "115%", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["64px", { "lineHeight": "115%", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "160%", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "160%", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "display-xl-mobile": ["56px", { "lineHeight": "110%", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "label-mono": ["12px", { "lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .mesh-gradient-animated {
+            background-color: #000000;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(210, 100%, 15%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(210, 80%, 10%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(210, 100%, 15%, 1) 0, transparent 50%);
+            background-size: 200% 200%;
+            animation: gradient-shift 15s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: opacity, transform;
+        }
+
+        .hero-title.active .stagger-word {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .magnetic-wrap {
+            display: inline-block;
+            transition: transform 0.3s ease-out;
+            will-change: transform;
+        }
+
+        .card-depth {
+            transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1), box-shadow 0.5s ease;
+            backface-visibility: hidden;
+        }
+
+        .card-depth:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backface-visibility: hidden;
+        }
+
+        .card-depth img {
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        .service-card:hover {
+            transform: scale(1.03);
+            background-color: #0a0a0a;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #0071E3;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.is-active::after {
+            width: 100%;
+        }
+
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .ticker-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            min-width: max-content;
+            animation: ticker-scroll 28s linear infinite;
+            will-change: transform;
+        }
+
+        .ticker-track span {
+            flex: 0 0 auto;
+            white-space: nowrap;
+        }
+
+        .ticker-wrap:hover .ticker-track {
+            animation-play-state: paused;
+        }
+
+        .mobile-menu-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-panel {
+            transform: translateX(-100%);
+            transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+        }
+
+        .mobile-menu-open .mobile-menu-overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-menu-open .mobile-menu-panel {
+            transform: translateX(0);
+        }
+
+        body.menu-locked {
+            overflow: hidden;
+        }
+
+        @keyframes ticker-scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 767px) {
+            main > section:first-child {
+                min-height: 620px !important;
+            }
+
+            section[class*="py-section-gap-lg"],
+            section[class*="py-section-gap-md"] {
+                padding-top: 72px !important;
+                padding-bottom: 72px !important;
+            }
+
+            .mobile-menu-link {
+                font-size: 24px !important;
+                padding-top: 16px !important;
+                padding-bottom: 16px !important;
+            }
+
+            h1,
+            .hero-title {
+                font-size: clamp(42px, 12vw, 58px) !important;
+                line-height: 1.04 !important;
+            }
+
+            h2,
+            .font-headline-lg-mobile {
+                font-size: clamp(32px, 9vw, 42px) !important;
+                line-height: 1.12 !important;
+            }
+
+            h3,
+            .font-headline-md,
+            .text-headline-md {
+                font-size: clamp(24px, 7vw, 30px) !important;
+                line-height: 1.22 !important;
+            }
+
+            .font-body-lg,
+            .text-body-lg {
+                font-size: 17px !important;
+                line-height: 1.55 !important;
+            }
+
+            [class*="gap-gutter"],
+            [class*="gap-12"],
+            [class*="gap-20"] {
+                gap: 24px !important;
+            }
+
+            [class*="mb-20"],
+            [class*="mb-32"] {
+                margin-bottom: 48px !important;
+            }
+
+            [class*="space-y-32"] > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 56px !important;
+            }
+
+            [class*="p-12"],
+            [class*="p-10"],
+            [class*="p-8"] {
+                padding: 24px !important;
+            }
+
+            [class*="aspect-[3/4]"] {
+                aspect-ratio: 4 / 3 !important;
+            }
+
+            .magnetic-wrap,
+            .magnetic-btn {
+                width: 100%;
+            }
+
+            .magnetic-btn {
+                justify-content: center;
+                text-align: center;
+                padding-left: 24px !important;
+                padding-right: 24px !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .reveal,
+            .card-depth,
+            .service-card,
+            .mesh-gradient-animated,
+            .stagger-word,
+            .ticker-track {
+                animation: none !important;
+                transition: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-surface font-body-md selection:bg-electric-blue selection:text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20 transition-all duration-500">
+        <div class="flex justify-between items-center px-6 md:px-margin-desktop py-5 md:py-6 w-full max-w-7xl mx-auto transition-[padding] duration-300">
+            <a class="font-headline-md text-[28px] md:text-headline-md font-bold tracking-tighter text-primary"
+                href="index.html">Craft <span class="text-electric-blue">.Labs</span></a>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-10">
+                 <a class="nav-link is-active relative font-body-md text-body-md uppercase tracking-widest text-electric-blue transition-colors duration-300"
+                    href="index.html">Accueil</a>
+                <a class="nav-link relative font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-electric-blue transition-colors duration-300"
+                    href="service.html">Services</a>
+                <a class="nav-link relative font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-electric-blue transition-colors duration-300"
+                    href="a%20propos.html">À Propos</a>
+                <a class="nav-link relative font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-electric-blue transition-colors duration-300"
+                    href="contact.html">Contact</a>
+                <div class="magnetic-wrap">
+                    <a href="contact.html"
+                        class="magnetic-btn ml-4 inline-flex px-6 py-3 bg-primary text-on-primary font-label-mono text-label-mono uppercase tracking-widest hover:bg-electric-blue transition-all duration-300">
+                        S'informer
+                    </a>
+                </div>
+            </div>
+            <!-- Mobile Menu Trigger -->
+            <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="md:hidden p-2 -mr-2" id="mobile-menu-toggle" type="button">
+                <span class="material-symbols-outlined text-primary text-3xl">menu</span>
+            </button>
+        </div>
+        <div class="mobile-menu-overlay fixed inset-0 z-40 bg-primary/45 backdrop-blur-sm md:hidden" data-mobile-close></div>
+        <aside aria-hidden="true" class="mobile-menu-panel fixed left-0 top-0 z-50 h-dvh w-[86vw] max-w-[360px] bg-surface-container-lowest border-r border-outline-variant/30 shadow-2xl md:hidden" id="mobile-menu">
+            <div class="flex h-full flex-col px-6 py-6">
+                <div class="flex items-center justify-between border-b border-outline-variant/20 pb-6">
+                    <a class="font-headline-md text-[26px] font-bold tracking-tighter text-primary" href="index.html">Craft <span class="text-electric-blue">.Labs</span></a>
+                    <button aria-label="Fermer le menu" class="p-2 -mr-2" data-mobile-close type="button">
+                        <span class="material-symbols-outlined text-primary text-3xl">close</span>
+                    </button>
+                </div>
+                <div class="flex flex-1 flex-col justify-between pt-10">
+                    <div class="space-y-2">
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-electric-blue transition-colors" href="index.html">
+                            Accueil <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </a>
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue" href="service.html">
+                            Services <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </a>
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue" href="a%20propos.html">
+                            À propos <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </a>
+                        <a class="mobile-menu-link group flex items-center justify-between border-b border-outline-variant/20 py-5 font-headline-md text-[28px] text-primary transition-colors hover:text-electric-blue" href="contact.html">
+                            Contact <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </a>
+                    </div>
+                    <div class="space-y-6 pt-10">
+                        <a class="mobile-menu-link inline-flex w-full items-center justify-center bg-primary px-6 py-4 font-label-mono text-label-mono uppercase tracking-widest text-on-primary transition-colors hover:bg-electric-blue" href="contact.html">
+                            Lancer un projet
+                        </a>
+                        <p class="font-body-md text-sm leading-relaxed text-on-surface-variant">Studio digital premium pour sites, applications et expériences web performantes.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </nav>
+    <main class="pt-[90px]">
+        <!-- Hero Section -->
+        <section class="relative min-h-[750px] flex items-center overflow-hidden bg-black" id="accueil">
+            <div class="absolute inset-0 z-0 overflow-hidden"><img alt="Fond d'art numérique de luxe abstrait"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRFRJsfJ39w8FKCoRnTZ_RvEjaZQKRk6x6qd_ufL4ilOugffUjOay9MZ4z4iw_GYCPAYCqKx9Y9LvIiEYvGk2hKvVTkZFeqnGySFTLLwO_nd9QKxYAsoAriqNcq8PKD9xX8NMBT89hhQgf2Xr77-Z9UqMXb-hn9N_JitGi3QBtr2RW3ro8SexHqUoJn6XeV7pXiPw-RBYuJ7YEijWWy2bgKtm344KBGzJa0a86ZlpxCv1dgEGSoBSHui9QUCt7LgewAz4W2WciUN0" />
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+            </div>
+            <!-- Blurred Atmospheric Shapes -->
+            <div
+                class="absolute top-1/4 -left-20 w-96 h-96 bg-electric-blue/20 rounded-full blur-[120px] animate-pulse">
+            </div>
+            <div
+                class="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-electric-blue/10 rounded-full blur-[150px]">
+            </div>
+            <div class="max-w-7xl mx-auto px-6 md:px-margin-desktop w-full relative z-10 text-white">
+                <div class="max-w-4xl">
+                    <span
+                        class="font-label-mono text-label-mono text-electric-blue uppercase mb-6 block tracking-[0.2em] reveal active"
+                        style="transition-delay: 100ms;">Excellence Technique</span>
+                    <h1
+                        class="text-white mb-8 hero-title active font-headline-lg-mobile md:font-headline-lg text-5xl md:text-7xl">
+                        <span class="stagger-word" style="transition-delay: 200ms;">Créateur</span>
+                        <span class="stagger-word" style="transition-delay: 350ms;">d'expériences</span>
+                        <span class="stagger-word" style="transition-delay: 450ms;">digitales</span>
+                        <span class="stagger-word" style="transition-delay: 550ms;">d'<span
+                                class="text-electric-blue">exception</span>.</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-white/70 mb-12 max-w-2xl reveal active"
+                        style="transition-delay: 1.1s;">
+                        Un studio de développement premium créant des sites haute performance, des applications et des
+                        expériences digitales avec une précision chirurgicale.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 reveal active" style="transition-delay: 1.3s;">
+                        <div class="magnetic-wrap">
+                            <a href="contact.html"
+                                class="magnetic-btn inline-flex px-10 py-5 bg-white text-primary font-label-mono text-label-mono uppercase tracking-widest hover:bg-electric-blue hover:text-white transition-all duration-300">
+                                Lancer un projet
+                            </a>
+                        </div>
+                        <div class="magnetic-wrap">
+                            <a href="index.html#travaux"
+                                class="magnetic-btn inline-flex px-10 py-5 border border-white/20 text-white font-label-mono text-label-mono uppercase tracking-widest hover:bg-white/10 transition-all duration-300">
+                                Voir nos travaux
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+          <!-- ══════════════════════════════════════════
+       TICKER STRIP
+  ══════════════════════════════════════════ -->
+  <div class="py-5 bg-electric-blue overflow-hidden">
+    <div class="ticker-wrap">
+      <div class="ticker-track">
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Design de Produit</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Développement Web</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Applications Mobiles</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Stratégie Digitale</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Expérience Utilisateur</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Intelligence Artificielle</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+        <!-- duplicate for seamless loop -->
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Design de Produit</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Développement Web</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Applications Mobiles</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Stratégie Digitale</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Expérience Utilisateur</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+        <span class="font-label-mono text-label-mono text-white uppercase tracking-widest px-8">Intelligence Artificielle</span>
+        <span class="text-white/50 font-label-mono text-label-mono">✦</span>
+      </div>
+    </div>
+  </div>
+        <!-- Trust Strip -->
+        <!-- ══════════════════════════════════════════
+       TRUST STRIP — Technologies
+  ══════════════════════════════════════════ -->
+  <section class="py-20 border-y border-outline-variant/20 bg-surface-container-lowest">
+    <div class="max-w-7xl mx-auto px-6 md:px-margin-desktop">
+      <p class="font-label-mono text-label-mono text-center text-outline uppercase tracking-widest mb-12 gs-fade">Technologies maîtrisées</p>
+      <div class="flex flex-wrap justify-center md:justify-between items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700 gs-fade">
+        <span class="font-headline-md font-bold tracking-tighter">REACT</span>
+        <span class="font-headline-md font-bold tracking-tighter">NEXT.JS</span>
+        <span class="font-headline-md font-bold tracking-tighter">TYPESCRIPT</span>
+        <span class="font-headline-md font-bold tracking-tighter">TAILWIND CSS</span>
+        <span class="font-headline-md font-bold tracking-tighter">FRAMER MOTION</span>
+        <span class="font-headline-md font-bold tracking-tighter">NODE.JS</span>
+      </div>
+    </div>
+  </section>
+        
+        <!-- Selected Work (Bento Grid) -->
+        <section class="py-section-gap-lg px-6 md:px-margin-desktop max-w-7xl mx-auto" id="travaux">
+            <div class="flex justify-between items-end mb-20 reveal active">
+                <div>
+                    <span class="font-label-mono text-label-mono text-electric-blue uppercase mb-4 block">Études de
+                        Cas</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">
+                        Projets Sélectionnés</h2>
+                </div>
+                <a class="hidden md:flex items-center gap-2 font-label-mono text-label-mono uppercase border-b border-primary py-1 hover:text-electric-blue hover:border-electric-blue transition-colors"
+                    href="contact.html">
+                    Explorer tous les projets <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                <!-- Project 1 -->
+                <div class="md:col-span-8 group cursor-pointer reveal card-depth active"
+                    style="transition-delay: 100ms;">
+                    <div class="relative aspect-video overflow-hidden bg-surface-container mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="Visualisation d'application Fintech"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQDY4Rzw2rd5meq-qk_ieSsMgSnP3RNAv3OaFsdLXSrW0cJOTOVHtdxCk7ToiA_aX7eZkvpndTtq_uL_7nCrwsz_hihkeAfKoaXrwcKD6S1agS9mMwVJ1soQ6offl8FVyLatvEaaWs6-qUWiDJcrfdX6Cn5Tl6aG3X-_9YwfN7K7TiGSZubg9eKsjkpV-x5fwrh1-Vox8iByJtF9x2wT2_DFntSMHR7pEZEyobiTqQJ1epG03Xi4gRxgaA9KNYT1S-91nQBEnynGE" />
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                    </div>
+                    <p class="font-label-mono text-label-mono text-outline mb-2">FINTECH / WEB APP</p>
+                    <h3 class="font-headline-md text-headline-md mb-2">Aether Assets Management</h3>
+                </div>
+                <!-- Project 2 -->
+                <div class="md:col-span-4 group cursor-pointer reveal md:mt-24 card-depth active"
+                    style="transition-delay: 300ms;">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="Site web de marque de mode"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv3r93JewwlxqRp2U4dPHlm0ARzdZ1OMM-cqB0G-VWMwLoxtk9ds-MDdej7CUjNTHQOr2gc7cV60i_Ya5DFOpgox9D0-KLBEI7PG7X6WMvJtxTd0NytAPfPWLio-Ex2aQu4KTBnK5eWa_fTSDwM4yb_rckEPTp_8mZ_lfUnY2BqB7k1k2Hm9ImSfo6KWf8bMdhTPsnHyWa08uKORDdx5jiKoRhzDC70c1-s4MUYqYsTL6y7Qf_2jn_DxuFZ5C5Ij7ejCDDpBzdXeI" />
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                    </div>
+                    <p class="font-label-mono text-label-mono text-outline mb-2">E-COMMERCE / MODE</p>
+                    <h3 class="font-headline-md text-headline-md mb-2">Vanguard Couture</h3>
+                </div>
+                <!-- Project 3 -->
+                <div class="md:col-span-4 group cursor-pointer reveal card-depth active"
+                    style="transition-delay: 100ms;">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-surface-container mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="Interface de plateforme immobilière"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZAHuBdYIElwrEb2lfBgz37IVL3gv0O98SAVS7_qnpxGUfyz-nMHB08Cp9-UiOaOeoGS-j2EKhlxit15ixvVF9Ifc96vlzKlllnZUznSYpLje2xYqPaTF7J6fJ8_8pI1UVVcEGxueIp7-ZaTVVjE8LubH6Vi8cb61mbgU-m5sba463XuZJVMCQrMIO1tsqIdjJkof3Ny_HuKWVH2vCPrW2zVT0oKwU3BuCwifp_o9VnumpdfaLSv5-4Mgv8Z5tFbpYs_mQFBhxri4" />
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                    </div>
+                    <p class="font-label-mono text-label-mono text-outline mb-2">IMMOBILIER / PLATEFORME</p>
+                    <h3 class="font-headline-md text-headline-md mb-2">Skyline Residency</h3>
+                </div>
+                <!-- Project 4 -->
+                <div class="md:col-span-8 group cursor-pointer reveal md:-mt-24 card-depth active"
+                    style="transition-delay: 300ms;">
+                    <div class="relative aspect-video overflow-hidden bg-surface-container mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="Tableau de bord analytique IA"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwNcp3UpDdKWLk6h3OdULLcv-YtbYTbc9pty9svWwabYcMHO26LbzmIa46L7qlRqyuBXd4rBIP9O3dhoWMOFDPDrLNCY-sT1CTj3-WW9zOJnnHgeuxKaaa8LnPPqmqP4TMNslDCIopE4GJE8SSARqKSzAlGAUly8EyszfK_4XZnPnIKuSnsxIkMJmPBLl2yUatdmHvJmxqI7vs3i43OQwqOeoqn7kD8b4qLAZPwZ3U8wODF8mMqblsx13j812gb18djbBq_kFtK3c" />
+                        <div
+                            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                    </div>
+                    <p class="font-label-mono text-label-mono text-outline mb-2">IA / ANALYTIQUE</p>
+                    <h3 class="font-headline-md text-headline-md mb-2">Neural Pulse AI</h3>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <section class="bg-primary text-on-primary py-section-gap-lg" id="services">
+            <div class="max-w-7xl mx-auto px-6 md:px-margin-desktop">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                    <div class="md:col-span-5 reveal active">
+                        <span
+                            class="font-label-mono text-label-mono text-on-primary-container uppercase mb-6 block">Notre
+                            Expertise</span>
+                        <h2
+                            class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-12">
+                            Concevoir la prochaine génération du numérique.</h2>
+                    </div>
+                    <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-12">
+                        <div class="border-t border-on-primary-container/30 pt-8 reveal service-card p-4 rounded-xl active"
+                            style="transition-delay: 100ms;">
+                            <span class="font-label-mono text-label-mono text-on-primary-container mb-4 block">01
+                                /</span>
+                            <h4 class="font-headline-md text-headline-md mb-4">Design de Produit</h4>
+                            <p class="font-body-md text-on-primary-container">Des systèmes de design centrés sur
+                                l'utilisateur et des parcours UI/UX qui privilégient la clarté, l'émotion et
+                                l'excellence fonctionnelle.</p>
+                        </div>
+                        <div class="border-t border-on-primary-container/30 pt-8 reveal service-card p-4 rounded-xl active"
+                            style="transition-delay: 200ms;">
+                            <span class="font-label-mono text-label-mono text-on-primary-container mb-4 block">02
+                                /</span>
+                            <h4 class="font-headline-md text-headline-md mb-4">Développement Web</h4>
+                            <p class="font-body-md text-on-primary-container">Des expériences web haute performance,
+                                sécurisées et optimisées pour le SEO, bâties avec les dernières piles technologiques.
+                            </p>
+                        </div>
+                        <div class="border-t border-on-primary-container/30 pt-8 reveal service-card p-4 rounded-xl active"
+                            style="transition-delay: 300ms;">
+                            <span class="font-label-mono text-label-mono text-on-primary-container mb-4 block">03
+                                /</span>
+                            <h4 class="font-headline-md text-headline-md mb-4">Applications Mobiles</h4>
+                            <p class="font-body-md text-on-primary-container">Des applications natives et
+                                multiplateformes qui offrent des performances fluides et des interactions d'une
+                                souplesse absolue.</p>
+                        </div>
+                        <div class="border-t border-on-primary-container/30 pt-8 reveal service-card p-4 rounded-xl active"
+                            style="transition-delay: 400ms;">
+                            <span class="font-label-mono text-label-mono text-on-primary-container mb-4 block">04
+                                /</span>
+                            <h4 class="font-headline-md text-headline-md mb-4">Stratégie</h4>
+                            <p class="font-body-md text-on-primary-container">Conseil technique et feuilles de route
+                                produit conçus pour aider les entreprises à croître et dominer leurs marchés.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Process Section -->
+        <section class="py-section-gap-lg px-6 md:px-margin-desktop max-w-7xl mx-auto" id="processus">
+            <div class="text-center mb-32 reveal active">
+                <span class="font-label-mono text-label-mono text-electric-blue uppercase mb-4 block">Flux de Travail de
+                    Précision</span>
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">
+                    Comment nous construisons</h2>
+            </div>
+            <div class="relative">
+                <!-- Vertical Line (Desktop) -->
+                <div
+                    class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 -translate-x-1/2 reveal active">
+                </div>
+                <div class="space-y-32">
+                    <!-- Step 1 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center reveal active">
+                        <div class="md:text-right">
+                            <span
+                                class="inline-block px-4 py-2 bg-surface-container rounded-full font-label-mono text-label-mono mb-6">ÉTAPE
+                                01</span>
+                            <h3 class="font-headline-md text-headline-md mb-4">Découverte &amp; Stratégie</h3>
+                            <p class="font-body-md text-on-surface-variant max-w-md md:ml-auto">Nous plongeons au cœur
+                                de vos objectifs commerciaux, de votre public cible et du paysage du marché pour définir
+                                une voie claire.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container-high aspect-video flex items-center justify-center overflow-hidden card-depth">
+                            <img class="w-full h-full object-cover transition-transform duration-1000"
+                                data-alt="Visualisation d'espace de travail"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCx_xk0gi-P-5WRaF38s1scIPIuq9sBBlraGNpHrbHO2Zcsy3EDpkOspnjsga0wj-mGCwSNmIs0vkMnw2iPrq5cYA9EY8p7vCeE5rQsGV4qypbt8_a8qhTXEj7yFytWuPtB2wUUawtslB2UiteUpfDUXFoogN7HfI6vZpcH4DIt9b_r7gjz39k2KjJmiH4ofSwQFscS1-2b-P5ki7IJz09DqVAN7jfWKqTH-A2PjIJhGpo_y4pNz6FIti_YbRlj4pm6EVKnplM-eI" />
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center reveal active">
+                        <div class="md:order-2">
+                            <span
+                                class="inline-block px-4 py-2 bg-surface-container rounded-full font-label-mono text-label-mono mb-6">ÉTAPE
+                                02</span>
+                            <h3 class="font-headline-md text-headline-md mb-4">Design &amp; Prototypage</h3>
+                            <p class="font-body-md text-on-surface-variant max-w-md">Des cycles de conception itératifs
+                                où nous créons des prototypes haute fidélité pour visualiser l'expérience utilisateur
+                                finale avant l'écriture de la première ligne de code.</p>
+                        </div>
+                        <div
+                            class="md:order-1 bg-surface-container-high aspect-video flex items-center justify-center overflow-hidden card-depth">
+                            <img class="w-full h-full object-cover transition-transform duration-1000"
+                                data-alt="Visualisation de bureau de design"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU6EsU586EQcRiTpyZZWvhZsHtAzH0r5ZXnoWYsOidy4MnMq6RMNC1Gia44rsEfkrOoAMApPvznls064ky4JurEDZIZNtYB4dVuNR0cml_Eb0t7t_R-wCd-XV1gHg06uHQCrjXw5gg2T-gl-TK4xQr_RCcizBfQW2mHEOwn1r2MlhQnrvX6MieKdQuQWmCRfDYrjMcncWB84VBKDOg-0RAdTx3Cc1WqCY3QPVBDUxo74HuhZnDlbYytKC1Y0_tkPOcDbXAKGtdcvY" />
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center reveal active">
+                        <div class="md:text-right">
+                            <span
+                                class="inline-block px-4 py-2 bg-surface-container rounded-full font-label-mono text-label-mono mb-6">ÉTAPE
+                                03</span>
+                            <h3 class="font-headline-md text-headline-md mb-4">Développement &amp; QA</h3>
+                            <p class="font-body-md text-on-surface-variant max-w-md md:ml-auto">Nos ingénieurs
+                                construisent des solutions évolutives en utilisant une architecture de code propre,
+                                suivie de tests rigoureux pour garantir une performance sans faille.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container-high aspect-video flex items-center justify-center overflow-hidden card-depth">
+                            <img class="w-full h-full object-cover transition-transform duration-1000"
+                                data-alt="Visualisation macro de code"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoL6AmyJhb6QiyLFe6kly49AoiCFKSwVx7y5aMaYZDBKQFtHqLCjuY8qIbL3ml_rOAi4eZHvMTCfKQeD0rma-If_BhocCJNHpH6ZsNK5XRCoE9EdLOxMb_rnODDTgg0mjyfQYrQmkGoxdw1tAyJgYnFzQTQnvfcRLy1hGsGqzIO9pE9hPvIHe03Hhnw9swlox4rOt9juQh6lSjYzGmhCNXIMRXNbn8_MwG4awsIMyivjgf44baF4gXK0Fxl_UCYP8H8zOjMkhnrpY" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials -->
+        <section class="py-section-gap-lg bg-surface-container-low overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 md:px-margin-desktop">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-gutter items-center">
+                    <div class="md:col-span-4 reveal active">
+                        <span class="font-label-mono text-label-mono text-electric-blue uppercase mb-4 block">Voix de
+                            nos Clients</span>
+                        <h2 class="font-headline-md text-[26px] leading-tight mb-6">Témoignages</h2>
+                        <div class="flex gap-3">
+                            <button class="p-3 border border-outline-variant hover:bg-white transition-colors"><span
+                                    class="material-symbols-outlined">west</span></button>
+                            <button class="p-3 border border-outline-variant hover:bg-white transition-colors"><span
+                                    class="material-symbols-outlined">east</span></button>
+                        </div>
+                    </div>
+                    <div class="md:col-span-8 reveal active" style="transition-delay: 200ms;">
+                        <div class="bg-white p-8 md:p-12 relative card-depth">
+                            <span
+                                class="material-symbols-outlined text-4xl text-surface-container opacity-50 absolute top-6 right-6">format_quote</span>
+                            <p class="font-headline-md text-[24px] md:text-[28px] leading-snug mb-8 italic">
+                                "STUDIO_LUXE a transformé notre vision en une réalité numérique qui a dépassé toutes nos
+                                attentes. Leur souci du détail et leur prouesse technique sont inégalés dans
+                                l'industrie."
+                            </p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-surface-container-high rounded-full overflow-hidden">
+                                    <img class="w-full h-full object-cover" data-alt="Portrait de Sarah Jenkins"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUQ0t-AWQ6HLsFvdDCyV3a3U3yjKG3O72yhgw-B9282wg4irI-5RgqSWA3Hpi_eu6B1G7Aod3pL9iyPOL9eGf5Ak5xpGNr6WA8M8hVjKtWtZ7ycB0-NoP81jra7TuEuxXMP6MLMCb9HS7i0ZtZVs1a-Q7xqZNzz91LpgCUk9Bmkh9xygMrW7Q34xOlfijUIeEhIyrsZ9BNYn3knLsLCW2ozT4NgwW9obR8DkLV3ZxkhDYqt1Qx1U26kTGNUtf7v01VgEyC4FESu8Q" />
+                                </div>
+                                <div>
+                                    <p class="font-body-md text-sm font-bold">Sarah Jenkins</p>
+                                    <p class="font-label-mono text-label-mono text-outline uppercase">CEO, AETHER
+                                        SYSTEMS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-section-gap-lg px-6 md:px-margin-desktop max-w-7xl mx-auto reveal active">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                <div class="md:col-span-4">
+                    <span class="font-label-mono text-label-mono text-electric-blue uppercase mb-4 block">FAQ</span>
+                    <h2 class="font-headline-md text-headline-md">Questions Fréquentes</h2>
+                </div>
+                <div class="md:col-span-8 space-y-6">
+                    <details class="group border-b border-outline-variant/30 pb-6">
+                        <summary class="flex justify-between items-center cursor-pointer list-none">
+                            <span class="font-body-lg font-medium">Quel est le délai moyen pour un projet ?</span>
+                            <span
+                                class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div class="mt-4 text-on-surface-variant font-body-md">
+                            Chaque projet est unique, mais comptez généralement 8 à 12 semaines pour une expérience sur
+                            mesure.
+                        </div>
+                    </details>
+                    <details class="group border-b border-outline-variant/30 pb-6">
+                        <summary class="flex justify-between items-center cursor-pointer list-none">
+                            <span class="font-body-lg font-medium">Quelles technologies utilisez-vous ?</span>
+                            <span
+                                class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div class="mt-4 text-on-surface-variant font-body-md">
+                            Nous sommes experts Next.js, React et Tailwind CSS, avec une attention particulière aux
+                            performances et au SEO.
+                        </div>
+                    </details>
+                    <details class="group border-b border-outline-variant/30 pb-6">
+                        <summary class="flex justify-between items-center cursor-pointer list-none">
+                            <span class="font-body-lg font-medium">Offrez-vous un support après le lancement ?</span>
+                            <span
+                                class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div class="mt-4 text-on-surface-variant font-body-md">
+                            Oui, nous proposons des forfaits de maintenance et d'optimisation continue pour garantir la
+                            pérennité de votre produit.
+                        </div>
+                    </details>
+                    <details class="group border-b border-outline-variant/30 pb-6">
+                        <summary class="flex justify-between items-center cursor-pointer list-none">
+                            <span class="font-body-lg font-medium">Comment se déroule la phase de découverte ?</span>
+                            <span
+                                class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div class="mt-4 text-on-surface-variant font-body-md">
+                            C'est une étape cruciale où nous définissons vos objectifs, votre cible et l'architecture
+                            technique de votre future solution.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="py-section-gap-lg px-6 md:px-margin-desktop max-w-7xl mx-auto text-center reveal active" id="contact">
+            <div class="py-16 md:py-20 bg-primary text-on-primary relative overflow-hidden">
+                <!-- Decorative blurred shape -->
+                <div class="absolute -top-20 -right-20 w-52 h-52 bg-electric-blue/20 rounded-full blur-[70px]"></div>
+                <h2
+                    class="font-headline-lg-mobile text-[32px] md:text-[48px] leading-tight mb-5 relative z-10">
+                    Parlons de votre projet</h2>
+                <p class="font-body-lg text-[17px] md:text-[18px] leading-relaxed text-on-primary-container max-w-xl mx-auto mb-8 relative z-10">Prêt à faire
+                    passer votre entreprise au niveau supérieur ? Notre équipe est prête à vous aider à concevoir et
+                    construire le futur.</p>
+                <div class="magnetic-wrap relative z-10">
+                    <a href="contact.html"
+                        class="magnetic-btn inline-flex px-9 py-4 bg-white text-primary font-label-mono text-label-mono uppercase tracking-widest hover:bg-studio-yellow transition-all duration-300">
+                        Nous contacter
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container-lowest border-t border-outline-variant/30 w-full py-12 md:py-14 reveal active">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-gutter px-6 md:px-margin-desktop max-w-7xl mx-auto">
+            <div class="md:col-span-5">
+                <a class="font-headline-md text-[26px] text-primary font-bold tracking-tighter mb-5 block"
+                    href="index.html">Craft<span class="text-electric-blue">.Labs</span></a>
+                <p class="font-body-md text-on-surface-variant max-w-sm mb-8">
+                    Un studio global de produits numériques focalisé sur le design haut de gamme et l'excellence
+                    technique.
+                </p>
+            </div>
+            <div class="md:col-span-2">
+                <p class="font-label-mono text-label-mono text-primary uppercase mb-4">Menu</p>
+                <ul class="space-y-3 font-body-md text-on-surface-variant">
+                    <li class=""><a class="text-electric-blue font-medium transition-colors" href="index.html">Accueil</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="service.html">Services</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="a%20propos.html">À Propos</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-2">
+                <p class="font-label-mono text-label-mono text-primary uppercase mb-4">Social</p>
+                <ul class="space-y-3 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">LinkedIn</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">Instagram</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">Twitter</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">Dribbble</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-3">
+                <p class="font-label-mono text-label-mono text-primary uppercase mb-4">Légal</p>
+                <ul class="space-y-3 font-body-md text-on-surface-variant">
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">Politique de
+                            Confidentialité</a></li>
+                    <li class=""><a class="hover:text-electric-blue transition-colors" href="#">Conditions
+                            d'Utilisation</a></li>
+                </ul>
+            </div>
+            <div
+                class="md:col-span-12 mt-10 pt-6 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between gap-4">
+                <p class="font-label-mono text-label-mono text-outline uppercase">©<span id="year"></span> Craft<span class="text-electric-blue">.Labs</span></p>
+                <script>
+                    (function(){
+                        const y = document.getElementById('year');
+                        if(y) y.textContent = new Date().getFullYear();
+                    })();
+                </script>
+                <p class="font-label-mono text-label-mono text-outline uppercase">Construit avec une précision
+                    chirurgicale.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const nav = document.querySelector('nav');
+            const mobileToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileCloseTargets = document.querySelectorAll('[data-mobile-close], .mobile-menu-link');
+            const animateMobileLinks = !reduceMotion && window.gsap;
+
+            const setMobileMenu = (isOpen) => {
+                if (!nav || !mobileMenu || !mobileToggle) return;
+
+                nav.classList.toggle('mobile-menu-open', isOpen);
+                document.body.classList.toggle('menu-locked', isOpen);
+                mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+                mobileToggle.setAttribute('aria-expanded', String(isOpen));
+
+                if (isOpen && animateMobileLinks) {
+                    gsap.killTweensOf('.mobile-menu-link');
+                    gsap.fromTo('.mobile-menu-link',
+                        { autoAlpha: 0, x: -18 },
+                        { autoAlpha: 1, x: 0, duration: 0.34, stagger: 0.05, delay: 0.08, ease: 'power3.out' }
+                    );
+                }
+            };
+
+            mobileToggle?.addEventListener('click', () => {
+                const isOpen = mobileToggle.getAttribute('aria-expanded') === 'true';
+                setMobileMenu(!isOpen);
+            });
+
+            mobileCloseTargets.forEach((target) => {
+                target.addEventListener('click', (event) => {
+                    const href = target.getAttribute('href');
+                    const isSamePageAnchor = href?.startsWith('#') && href.length > 1;
+
+                    setMobileMenu(false);
+
+                    if (isSamePageAnchor) {
+                        event.preventDefault();
+                        setTimeout(() => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }), 180);
+                    }
+                });
+            });
+
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') setMobileMenu(false);
+            });
+
+            window.addEventListener('scroll', () => {
+                if (!nav) return;
+                const navInner = nav.querySelector('div');
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-lg', 'bg-surface/95');
+                    nav.classList.remove('bg-surface/80');
+                    navInner?.classList.add('py-4');
+                    navInner?.classList.remove('py-5', 'md:py-6');
+                } else {
+                    nav.classList.add('bg-surface/80');
+                    nav.classList.remove('shadow-lg', 'bg-surface/95');
+                    navInner?.classList.add('py-5', 'md:py-6');
+                    navInner?.classList.remove('py-4');
+                }
+            }, { passive: true });
+
+            // set current year dynamically so it updates automatically
+            const yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            if (!reduceMotion) {
+                document.querySelectorAll('.magnetic-wrap').forEach(wrap => {
+                    const btn = wrap.querySelector('.magnetic-btn');
+                    if (!btn) return;
+
+                    const moveWrapX = window.gsap ? gsap.quickTo(wrap, 'x', { duration: 0.35, ease: 'power3.out' }) : null;
+                    const moveWrapY = window.gsap ? gsap.quickTo(wrap, 'y', { duration: 0.35, ease: 'power3.out' }) : null;
+                    const moveBtnX = window.gsap ? gsap.quickTo(btn, 'x', { duration: 0.45, ease: 'power3.out' }) : null;
+                    const moveBtnY = window.gsap ? gsap.quickTo(btn, 'y', { duration: 0.45, ease: 'power3.out' }) : null;
+
+                    wrap.addEventListener('mousemove', (event) => {
+                        const rect = wrap.getBoundingClientRect();
+                        const x = event.clientX - rect.left - rect.width / 2;
+                        const y = event.clientY - rect.top - rect.height / 2;
+
+                        if (moveWrapX && moveWrapY && moveBtnX && moveBtnY) {
+                            moveWrapX(x * 0.28);
+                            moveWrapY(y * 0.28);
+                            moveBtnX(x * 0.1);
+                            moveBtnY(y * 0.1);
+                        } else {
+                            wrap.style.transform = `translate(${x * 0.28}px, ${y * 0.28}px)`;
+                            btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+                        }
+                    });
+
+                    wrap.addEventListener('mouseleave', () => {
+                        if (window.gsap) {
+                            gsap.to([wrap, btn], { x: 0, y: 0, duration: 0.55, ease: 'elastic.out(1, 0.45)' });
+                        } else {
+                            wrap.style.transform = '';
+                            btn.style.transform = '';
+                        }
+                    });
+                });
+            }
+
+            const useGsap = !reduceMotion && window.gsap && window.ScrollTrigger;
+
+            if (useGsap) {
+                gsap.registerPlugin(ScrollTrigger);
+                gsap.config({ force3D: true, nullTargetWarn: false });
+
+                const revealItems = gsap.utils.toArray('.reveal').filter((element) => {
+                    return !element.matches('.card-depth, .service-card') && !element.closest('details');
+                });
+                const heroWords = gsap.utils.toArray('.hero-title .stagger-word');
+                const sectionTitles = gsap.utils.toArray('main section h2');
+                const projectCards = gsap.utils.toArray('.card-depth');
+                const serviceCards = gsap.utils.toArray('.service-card');
+                const faqItems = gsap.utils.toArray('details');
+
+                gsap.set(heroWords, { autoAlpha: 0, yPercent: 110, rotateX: 35, transformOrigin: '50% 100%' });
+                gsap.set(sectionTitles, { autoAlpha: 0, y: 26, scaleY: 0.96, transformOrigin: '50% 100%' });
+                gsap.set(projectCards, { autoAlpha: 0, transformPerspective: 900 });
+                gsap.set(serviceCards, { autoAlpha: 0, transformPerspective: 900 });
+                gsap.set(faqItems, { autoAlpha: 0 });
+
+                const revealVariants = [
+                    { x: 0, y: 42, scale: 1, rotate: 0 },
+                    { x: -34, y: 14, scale: 1, rotate: -1 },
+                    { x: 34, y: 14, scale: 1, rotate: 1 },
+                    { x: 0, y: 18, scale: 0.96, rotate: 0 }
+                ];
+
+                const revealFrom = (element, index) => {
+                    if (element.closest('footer')) return { x: 0, y: 18, scale: 1, rotate: 0 };
+                    if (element.closest('.bg-primary')) return { x: index % 2 ? 32 : -32, y: 12, scale: 1, rotate: index % 2 ? 0.8 : -0.8 };
+                    if (element.querySelector('h2')) return { x: 0, y: 24, scale: 0.98, rotate: 0 };
+                    return revealVariants[index % revealVariants.length];
+                };
+
+                gsap.timeline({ defaults: { ease: 'power4.out' } })
+                    .to(heroWords, { autoAlpha: 1, yPercent: 0, rotateX: 0, duration: 1.05, stagger: 0.11 })
+                    .to('.hero-title', { textShadow: '0 18px 55px rgba(0,113,227,0.22)', duration: 0.9 }, '-=0.8');
+
+                gsap.to('.hero-title', { autoAlpha: 1, duration: 0.01 });
+                gsap.to('.hero-title ~ p, .hero-title ~ div, section:first-of-type .reveal', {
+                    autoAlpha: 1,
+                    y: 0,
+                    duration: 0.75,
+                    stagger: 0.12,
+                    ease: 'power3.out',
+                    delay: 0.35,
+                    overwrite: 'auto'
+                });
+
+                gsap.to('section:first-of-type img', {
+                    scale: 1.08,
+                    yPercent: 5,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: 'section:first-of-type',
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+
+                revealItems.forEach((element, index) => {
+                    if (element.closest('section:first-of-type')) return;
+                    gsap.fromTo(element,
+                        { autoAlpha: 0, ...revealFrom(element, index) },
+                        {
+                            autoAlpha: 1,
+                            x: 0,
+                            y: 0,
+                            scale: 1,
+                            rotate: 0,
+                            duration: 0.72,
+                            ease: index % 3 === 0 ? 'expo.out' : 'power3.out',
+                            overwrite: 'auto',
+                            scrollTrigger: {
+                                trigger: element,
+                                start: 'top 84%',
+                                once: true
+                            }
+                        }
+                    );
+                });
+
+                sectionTitles.forEach((title) => {
+                    gsap.to(title, {
+                        autoAlpha: 1,
+                        y: 0,
+                        scaleY: 1,
+                        duration: 0.65,
+                        ease: 'expo.out',
+                        overwrite: 'auto',
+                        scrollTrigger: {
+                            trigger: title,
+                            start: 'top 86%',
+                            once: true
+                        }
+                    });
+                });
+
+                gsap.utils.toArray('section').forEach((section) => {
+                    const cards = section.querySelectorAll('.card-depth, .service-card, details');
+                    if (!cards.length) return;
+
+                    gsap.fromTo(cards,
+                        {
+                            autoAlpha: 0,
+                            x: (index) => index % 2 === 0 ? -24 : 24,
+                            y: (index) => 38 + index * 5,
+                            scale: (index) => index % 2 === 0 ? 0.95 : 0.98,
+                            rotate: (index) => index % 2 === 0 ? -0.8 : 0.8,
+                            rotateX: (index) => index % 2 === 0 ? 3 : -3
+                        },
+                        {
+                            autoAlpha: 1,
+                            x: 0,
+                            y: 0,
+                            scale: 1,
+                            rotate: 0,
+                            rotateX: 0,
+                            duration: 0.75,
+                            stagger: 0.09,
+                            ease: 'power3.out',
+                            overwrite: 'auto',
+                            scrollTrigger: {
+                                trigger: section,
+                                start: 'top 76%',
+                                once: true
+                            }
+                        }
+                    );
+                });
+
+                gsap.utils.toArray('.space-y-32 > .grid').forEach((step, index) => {
+                    gsap.fromTo(step.children,
+                        {
+                            autoAlpha: 0,
+                            x: (childIndex) => childIndex === 0 ? (index % 2 === 0 ? -42 : 42) : (index % 2 === 0 ? 42 : -42),
+                            y: 14
+                        },
+                        {
+                            autoAlpha: 1,
+                            x: 0,
+                            y: 0,
+                            duration: 0.72,
+                            stagger: 0.12,
+                            ease: 'power3.out',
+                            overwrite: 'auto',
+                            scrollTrigger: {
+                                trigger: step,
+                                start: 'top 78%',
+                                once: true
+                            }
+                        }
+                    );
+                });
+
+                gsap.utils.toArray('.card-depth img').forEach((image) => {
+                    gsap.fromTo(image,
+                        { scale: 1.08 },
+                        {
+                            scale: 1,
+                            duration: 0.9,
+                            ease: 'power2.out',
+                            overwrite: 'auto',
+                            scrollTrigger: {
+                                trigger: image,
+                                start: 'top 88%',
+                                once: true
+                            }
+                        }
+                    );
+                });
+
+                gsap.fromTo('.ticker-wrap',
+                    { autoAlpha: 0, scaleX: 0.84, transformOrigin: '50% 50%' },
+                    {
+                        autoAlpha: 1,
+                        scaleX: 1,
+                        duration: 0.65,
+                        ease: 'expo.out',
+                        overwrite: 'auto',
+                        scrollTrigger: {
+                            trigger: '.ticker-wrap',
+                            start: 'top 92%',
+                            once: true
+                        }
+                    }
+                );
+
+                gsap.fromTo('footer .grid > div',
+                    { autoAlpha: 0, y: 22 },
+                    {
+                        autoAlpha: 1,
+                        y: 0,
+                        duration: 0.55,
+                        stagger: 0.08,
+                        ease: 'power3.out',
+                        overwrite: 'auto',
+                        scrollTrigger: {
+                            trigger: 'footer',
+                            start: 'top 88%',
+                            once: true
+                        }
+                    }
+                );
+            } else {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                document.querySelector('.hero-title')?.classList.add('active');
+                document.querySelectorAll('.reveal, .hero-title').forEach(element => revealObserver.observe(element));
+            }
+        });
+    </script>
+</body>
+
+</html>
